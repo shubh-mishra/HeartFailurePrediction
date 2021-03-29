@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Prediction</title>
+</head>
+
+<body>
+
+    <div style="color: blue;"><form action="{{ url_for('predict')}}" method="post">
+<h2>Heart Failure prediction</h2>
+<h3>Enter the age: </h3>
+<input id="age" name="age" type="number " />
+<h3>Are you suffering from anaemia?</h3>
+<br /><select id="anaemia" name="anaemia" required="required">
+<option value="no">No</option>
+<option value="yes">Yes</option>
+</select>
+<h3>Are you suffering from high blood pressure?</h3>
+<br /><select id="bp" name="hbp" required="required">
+<option value="no">No</option>
+<option value="yes">Yes</option>
+</select>
+<h3>Enter the percentage of serum sodium in the blood (mg/dL):</h3>
+<input id="serium_sodium" name="serium_sodium" type="number " />
+<h3>Enter the percentage of blood leaving the heart at each contraction (Ejection fraction) (mg/dL) :</h3>
+<input id="ef" name="ef" type="number " />
+<h3>What is the follow-up period (days)?</h3>
+<input id="time" name="time" type="number " />
+<br /><br /><button id="sub" type="submit ">Predict</button></form><br /><br />
+<h3>{{ prediction_text }}</h3>
+</div>
+
+</body>
+
+</html>
